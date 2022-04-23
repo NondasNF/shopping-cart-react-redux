@@ -6,7 +6,8 @@ const initialState = {
   basket: {
     status: true,
     items: [],
-    total: 0
+    totalPrice: 0,
+    itemsCount: 0
   }
 }
 
@@ -19,7 +20,8 @@ function reducer(state = initialState, action) {
           ...state.basket,
           status: false,
           items: [...state.basket.items, action.payload],
-          total: state.basket.total + action.payload.price
+          totalPrice: state.basket.totalPrice + action.payload.price,
+          itemsCount: state.basket.itemsCount + 1
         }
       }
 
@@ -27,7 +29,8 @@ function reducer(state = initialState, action) {
       return {
         ...state,
         basket: { items: state.basket.items.filter(item => item.id !== action.payload.id),
-        total: state.basket.total - action.payload.price * action.payload.quantity
+        totalPrice: state.basket.totalPrice - action.payload.price * action.payload.quantity,
+        itemsCount: state.basket.itemsCount - action.payload.quantity
         }
       }
 
@@ -44,7 +47,8 @@ function reducer(state = initialState, action) {
           }
           return item
         }),
-        total: state.basket.total + action.payload.price
+        totalPrice: state.basket.totalPrice + action.payload.price,
+        itemsCount: state.basket.itemsCount + 1
       }
     }
 
@@ -61,7 +65,8 @@ function reducer(state = initialState, action) {
           }
           return item
         }),
-        total: state.basket.total - action.payload.price
+        totalPrice: state.basket.totalPrice - action.payload.price,
+        itemsCount: state.basket.itemsCount - 1 
       }
     }
 
@@ -71,7 +76,8 @@ function reducer(state = initialState, action) {
         basket: {
           status: 'empty',
           items: [],
-          total: 0
+          totalPrice: 0,
+          itemsCount: 0
         }
       }
     default:

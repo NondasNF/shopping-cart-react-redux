@@ -21,7 +21,7 @@ const  Products = ({products, productsOnCart}) => {
       {products.map((item) => (
         <div key={item.id}>
           <h2>{item.name}</h2>
-          <p>Price: {item.price}</p>
+          <p>Price: {item.price}$</p>
           <p>Quantity: {item.quantity}</p>
           <button onClick={() => handleAddToCart(item)}>add</button>
         </div>
