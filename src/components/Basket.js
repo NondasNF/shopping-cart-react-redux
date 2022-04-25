@@ -3,6 +3,8 @@ import { useDispatch } from "react-redux";
 import { connect } from "react-redux";
 import { incrementQuantity, decrementQuantity, removeFromCart } from "../actions/basketActions";
 import { incrementQuantityInShop, decrementQuantityInShop, restoreQuantityInShop } from "../actions/shopActions";
+import DeleteOutlineOutlinedIcon from '@mui/icons-material/DeleteOutlineOutlined';
+import "./Basket.css"
 
 function Basket({ products, basket, toggleBasket }) {
   const allProductsOnCart = basket.items
@@ -34,28 +36,56 @@ function Basket({ products, basket, toggleBasket }) {
   }
 
   return (
-    <div style={{
-      display: toggleBasket? "block" : "none"
+    <div className="basket" style={{
+      display: toggleBasket ? "block" : "none"
     }}>
-      <h1>Your Basket</h1>
-      {allProductsOnCart.length === 0 ? (
-        <p>Your basket is empty</p>) : (
-        <>
-          {allProductsOnCart.map((item) => (
-            <div key={item.id}>
-              <h2>{item.name}</h2>
-              <p>Price: {item.price}$</p>
-              <p>Quantity: {item.quantity}</p>
-              <button onClick={() => handleIncrementQuantity(item)}>+</button>
-              <button onClick={() => handleDecrementQuantity(item)}>-</button>
-              <button onClick={() => handleRemoveFromBasket(item)}>Remove</button>
-            </div>
-          ))}
-          <p> Delivery fee: {allProductsOnCartCount >= 20 ? 'FREE' : '5$'}</p>
-          <p>Total: {total}$</p>
-        </>
-      )
-      }
+      <table className="basket__table">
+        <thead className="table__header">
+          <tr className="table__header">
+            <th className="table__header__cell">Item</th>
+            <th className="table__header__cell">Price</th>
+            <th className="table__header__cell">Quantity</th>
+          </tr>
+        </thead>
+
+        {allProductsOnCart.length === 0 ?
+          (<tbody>
+            <tr>
+              <td className="table__body__cell">No items</td>
+              <td className="table__body__cell">-</td>
+              <td className="table__body__cell">-</td>
+            </tr>
+          </tbody>
+          ) : (
+            <tbody className="table__body">
+              {allProductsOnCart.map((item) => (
+                <tr className="table__body__row" key={item.id}>
+                  <td className="table__body__cell">{item.name}</td>
+                  <td className="table__body__cell">{item.price}$</td>
+                  <td className="table__body__cell__quantity">
+                    <span className="quantity-value">{item.quantity}</span>
+                    <button className="quantity-button"onClick={() => handleIncrementQuantity(item)}><span>+</span></button>
+                    <button className="quantity-button quantity-button--decrement"onClick={() => handleDecrementQuantity(item)}><span>-</span></button>
+                    <button className="quantity-button quantity-button--remove"onClick={() => handleRemoveFromBasket(item)}><DeleteOutlineOutlinedIcon fontSize="small"/></button>
+                  </td>
+                </tr>
+              ))}
+              <tr className="table__body__row">
+                <td className="table__body__cell">Delivery:</td>
+                <td className="table__body__cell">{allProductsOnCartCount >= 20 ? 'FREE' : '5$'}</td>
+                <td> </td>
+              </tr>
+              <tr className="table__body__row">
+                <td className="table__body__cell">Total:</td>
+                <td className="table__body__cell">{total}$</td>
+                <td> </td>
+              </tr>
+            </tbody>
+          )
+        }
+
+      </table>
+      <button className="basket__button" disabled={allProductsOnCart.length === 0 ? true : false} >FINALIZE PURCHASE</button>
     </div>
   );
 }
