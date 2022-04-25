@@ -13,6 +13,7 @@
 .products__item {
   margin: 10px;
   width: 130px;
+  height: 170px;
 }
 
 .item__title {
