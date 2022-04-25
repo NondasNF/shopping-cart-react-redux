@@ -4,6 +4,8 @@ import { addToCart, incrementQuantity } from "../actions/basketActions";
 import { decrementQuantityInShop } from "../actions/shopActions";
 import { connect } from "react-redux";
 import Button from '@mui/material/Button';
+import Card from '@mui/material/Card';
+import CardContent from '@mui/material/CardContent';
 import "./Shop.css";
 
 const Shop = ({ products, productsOnCart }) => {
@@ -25,16 +27,15 @@ const Shop = ({ products, productsOnCart }) => {
 
   return (
     <div className="products">
-      <h1 className="products__title">Products:</h1>
       {products.map((item) => (
-        <div className="products__item" key={item.id}>
-          <h2 className="item__title">{item.name}</h2>
+        <Card className="products__item" key={item.id}>
+          <CardContent className="item__title">{item.name}</CardContent>
           <div className="item__info">
             <p className="item__info__price">Price: <span>{item.price}$</span></p>
             <p className="item__info__quantity">Quantity: <span>{item.quantity}</span></p>
           </div>
           <Button onClick={() => handleAddToCart(item)}>BUY</Button>
-        </div>
+        </Card>
       ))}
     </div>
   )

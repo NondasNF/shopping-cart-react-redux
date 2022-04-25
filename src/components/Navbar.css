@@ -1,6 +1,7 @@
 .navbar__basket__button__show, .navbar__basket__button__close {
   width: 30px;
   height: 30px;
+  cursor: pointer;
 }
 
 
@@ -37,7 +38,7 @@
 }
 
 .navbar__basket__button__show {
-  color: #000000
+  color: #785bef
 }
 
 .navbar__basket__button__show {
