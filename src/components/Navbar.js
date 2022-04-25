@@ -1,7 +1,7 @@
 import React from 'react';
 import { useDispatch } from "react-redux";
 import { toggleBasket } from "../actions/basketActions";
-import {ReactComponent as CartIcon } from "../assets/icons/cart.svg";
+import { ShoppingCartOutlined, RemoveShoppingCartOutlined } from '@mui/icons-material';
 import { connect } from "react-redux";
 import "./Navbar.css";
 
@@ -16,9 +16,11 @@ function Navbar ({showBasket}) {
       <div className="navbar__basket__button" onClick={() => (dispatch(toggleBasket()))}
         style={{
           backgroundColor: showBasket ? '#f26c4f' : '#ffffff',
-        }}
-        >
-        <CartIcon className="navbar__basket__button__icon"/>
+        }}>
+        {showBasket ?
+         <RemoveShoppingCartOutlined className="navbar__basket__button__show" fontSize="large"/> :
+         <ShoppingCartOutlined className="navbar__basket__button__close" fontSize="large"/>
+        }
       </div>
       </div>
     </nav>

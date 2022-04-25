@@ -3,6 +3,7 @@ import { useDispatch } from "react-redux";
 import { addToCart, incrementQuantity } from "../actions/basketActions";
 import { decrementQuantityInShop } from "../actions/shopActions";
 import { connect } from "react-redux";
+import Button from '@mui/material/Button';
 import "./Shop.css";
 
 const Shop = ({ products, productsOnCart }) => {
@@ -32,7 +33,7 @@ const Shop = ({ products, productsOnCart }) => {
             <p className="item__info__price">Price: <span>{item.price}$</span></p>
             <p className="item__info__quantity">Quantity: <span>{item.quantity}</span></p>
           </div>
-          <button className="item__button" onClick={() => handleAddToCart(item)}>BUY</button>
+          <Button onClick={() => handleAddToCart(item)}>BUY</Button>
         </div>
       ))}
     </div>
