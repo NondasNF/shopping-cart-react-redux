@@ -3,7 +3,7 @@ import { useDispatch } from "react-redux";
 import { toggleBasket } from "../actions/basketActions";
 import { ShoppingCartOutlined, RemoveShoppingCartOutlined } from '@mui/icons-material';
 import { connect } from "react-redux";
-import "./Navbar.css";
+// import "./Navbar.css";
 
 function Navbar ({showBasket}) {
   const dispatch = useDispatch();

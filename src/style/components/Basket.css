@@ -1,5 +1,5 @@
 .basket {
-  background-color: #ffffff;
+  background-color: var(--tertiary-background);
   position:absolute; 
   padding: 20px;
   box-sizing: border-box;
@@ -10,15 +10,15 @@
 
 .basket__table {
   width: 100%;
-  background-color: #ffffff;
+  background-color: var(--tertiary-background);
   border-radius: 5px;
   box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.2);
   border-spacing: 0;
 }
 
 .table__header {
-  background-color: #785bef;
-  color: #ffffff;
+  background-color: var(--secondary-background);
+  color: var(--tertiary-background);
   padding: 10px;
   height: 40px;
 }
@@ -50,9 +50,9 @@
 }
 
 .quantity-button {
-  background-color: #81bfe9;
+  background-color: var(--quaternary-background);
   border: none;
-  color: #fff;
+  color: var(--tertiary-background);
   font-size: 15px;
   margin: 0;
   font-weight: 600;
@@ -71,13 +71,13 @@
 }
 
 .quantity-button--remove, .quantity-button--decrement{
-  background-color: #f44336;
+  background-color: var(--alert-background);
 }
 
 .basket__button {
-  background-color: #81bfe9;
+  background-color: var(--quaternary-background);
   border: none;
-  color: #fff;
+  color: var(--tertiary-background);
   font-size: 20px;
   font-weight: 600;
   cursor: pointer;
@@ -88,21 +88,14 @@
 }
 
 .basket__button:hover {
-  background-color: #9dff8a;
+  background-color: var(--confirm-background);
   transform: scale(1.1);
 }
 
 .basket__button:disabled {
-  background-color: #afcbdd;
+  background-color: var(--disabled-background);
   cursor: not-allowed;
 }
-
-/* @media (min-width: 768px) {
-  .basket {
-    height: 80vh;
-    margin-top: 200px;
-  }
-} */
 
 @media (min-width: 1024px) {
   .basket { 
@@ -111,7 +104,7 @@
     box-sizing: border-box;
     width: 330px;
     height: auto;
-    background-color: #fff;
+    background-color: var(--tertiary-background);
     top: 0;
   }
 }

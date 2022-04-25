@@ -12,3 +12,9 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+@import "./components/App.css";
+@import "./components/Shop.css";
+@import "./components/Basket.css";
+@import "./components/Navbar.css";
+@import "./colors.css";

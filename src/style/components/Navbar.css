@@ -9,16 +9,16 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #006fb9;
+  background-color: var(--primary-background);
   height: 75px;
   padding: 0 30px;  
-  color: #785bef;
+  color: var(--secondary-background);
   box-sizing: border-box;
 }
 
 .navbar__title {
-  background-color: #ffffff;
-  color: #785bef;
+  background-color: var(--tertiary-background);
+  color: var(--secondary-background);
   padding: 5px 10px;
   border-radius: 50px;
   height: 35px;
@@ -35,7 +35,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color:#785bef;
+  background-color:var(--secondary-background);
   border-radius: 50px;
   padding: 5px;
   width: 35px;
@@ -44,10 +44,10 @@
 }
 
 .navbar__basket__button__show {
-  color: #785bef
+  color: var(--secondary-background);
 }
 
 .navbar__basket__button__close {
-  color: #ffffff
+  color: var(--tertiary-background);
 }
 

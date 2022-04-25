@@ -1,0 +1,9 @@
+:root {
+  --primary-background: #006fb9;
+  --secondary-background: #785bef;
+  --tertiary-background: #ffffff;
+  --quaternary-background: #81bfe9;
+  --alert-background: #f44336;
+  --confirm-background: #9dff8a;
+  --disabled-background: #afcbdd;
+}

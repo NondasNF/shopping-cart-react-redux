@@ -6,7 +6,7 @@ import { connect } from "react-redux";
 import Button from '@mui/material/Button';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
-import "./Shop.css";
+// import "./Shop.css";
 
 const Shop = ({ products, productsOnCart }) => {
   const dispatch = useDispatch();

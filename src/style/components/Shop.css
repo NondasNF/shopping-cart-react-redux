@@ -19,8 +19,8 @@
 .item__title {
   font-size: 20px;
   margin: 0;
-  background-color: #785bef;
-  color: #ffffff;
+  background-color: var(--secondary-background);
+  color: var(--tertiary-background);
   border-radius: 10px 10px 0 0;
 }
 
@@ -37,11 +37,11 @@
 }
 
 .item__button {
-  background-color: #54b8fc;
+  background-color: var(--primary-background);
   width: 100%;
   padding: 5px 10px;
   border: none;
-  color: #fff;
+  color: var(--tertiary-background);
   font-size: 15px;
   border-radius: 0 0 10px 10px;
   margin: 0;
@@ -50,5 +50,5 @@
 }
 
 .item__button:hover {
-  background-color: #236fa1;
+  background-color: var(--primary-background);
 }

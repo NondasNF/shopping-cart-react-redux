@@ -4,7 +4,7 @@ import { connect } from "react-redux";
 import { incrementQuantity, decrementQuantity, removeFromCart } from "../actions/basketActions";
 import { incrementQuantityInShop, decrementQuantityInShop, restoreQuantityInShop } from "../actions/shopActions";
 import DeleteOutlineOutlinedIcon from '@mui/icons-material/DeleteOutlineOutlined';
-import "./Basket.css"
+// import "./Basket.css"
 
 function Basket({ products, basket, toggleBasket }) {
   const allProductsOnCart = basket.items
