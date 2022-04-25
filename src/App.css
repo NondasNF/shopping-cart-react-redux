@@ -3,3 +3,8 @@
   flex-direction:column;
   justify-content: space-around;
 }
+
+.App__main{
+  display:flex;
+  justify-content: space-between;
+}
