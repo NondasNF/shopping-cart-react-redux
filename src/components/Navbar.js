@@ -15,11 +15,11 @@ function Navbar ({showBasket}) {
       <div className="navbar__basket">
       <div className="navbar__basket__button" onClick={() => (dispatch(toggleBasket()))}
         style={{
-          backgroundColor: showBasket ? '#f26c4f' : '#ffffff',
+          backgroundColor: showBasket ? '#785bef' : '#ffffff',
         }}>
         {showBasket ?
-         <RemoveShoppingCartOutlined className="navbar__basket__button__show" fontSize="large"/> :
-         <ShoppingCartOutlined className="navbar__basket__button__close" fontSize="large"/>
+         <RemoveShoppingCartOutlined className="navbar__basket__button__close" fontSize="large"/> :
+         <ShoppingCartOutlined className="navbar__basket__button__show" fontSize="large"/>
         }
       </div>
       </div>

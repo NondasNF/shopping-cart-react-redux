@@ -12,13 +12,19 @@
   background-color: #006fb9;
   height: 75px;
   padding: 0 30px;  
+  color: #785bef;
+  box-sizing: border-box;
 }
 
 .navbar__title {
-  background-color: #f26c4f;
-  color: #ffffff;
+  background-color: #ffffff;
+  color: #785bef;
   padding: 5px 10px;
   border-radius: 50px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .navbar__title__text {
@@ -29,7 +35,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color:#ffffff;
+  background-color:#785bef;
   border-radius: 50px;
   padding: 5px;
   width: 35px;
@@ -41,7 +47,7 @@
   color: #785bef
 }
 
-.navbar__basket__button__show {
+.navbar__basket__button__close {
   color: #ffffff
 }
 
