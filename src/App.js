@@ -1,12 +1,14 @@
 import React from 'react';
-import Products from './components/Products';
+import Navbar from './components/Navbar';
+import Shop from './components/Shop';
 import Basket from './components/Basket';
 import './App.css';
 
 function App() {
   return (
     <div className="App">
-      <Products/>
+      <Navbar />
+      <Shop/>
       <Basket/>
     </div>
   );

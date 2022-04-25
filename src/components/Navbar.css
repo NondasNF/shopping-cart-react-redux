@@ -1,0 +1,30 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #006fb9;
+  height: 75px;
+  color: #ffffff;
+  padding: 0 30px;  
+}
+
+.navbar__title {
+  background-color: #f26c4f;
+  color: #ffffff;
+  padding: 5px 10px;
+  border-radius: 50px;
+}
+
+.navbar__title__text {
+  margin: 0;
+}
+
+.navbar__basket__button {
+  background-color:#ffffff;
+  border-radius: 50px;
+  padding: 5px;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+}
+

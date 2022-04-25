@@ -1,4 +1,4 @@
 import { createStore } from '@reduxjs/toolkit';
-import reducer from './reducers/basketReducer';
-const store = createStore(reducer);
+import rootReducer from './reducers/rootReducer';
+const store = createStore(rootReducer);
 export default store;

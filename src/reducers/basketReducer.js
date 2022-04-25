@@ -1,44 +1,35 @@
-import { ADD_TO_CART, REMOVE_FROM_CART, INCREMENT_QUANTITY, DECREMENT_QUANTITY, CLEAN_CART } from '../actions/basketActions';
-import data from '../data';
+import { ADD_TO_CART, REMOVE_FROM_CART, INCREMENT_QUANTITY, DECREMENT_QUANTITY, TOGGLE_BASKET, CLEAN_CART } from '../actions/basketActions';
 
 const initialState = {
-  items: [...data.products],
-  basket: {
-    status: true,
-    items: [],
-    totalPrice: 0,
-    itemsCount: 0
-  }
+  items: [],
+  totalPrice: 0,
+  itemsCount: 0,
+  show: false
 }
 
-function reducer(state = initialState, action) {
+function basketReducer(state = initialState, action) {
   switch (action.type) {
     case ADD_TO_CART:
       return {
         ...state,
-        basket: {
-          ...state.basket,
-          status: false,
-          items: [...state.basket.items, action.payload],
-          totalPrice: state.basket.totalPrice + action.payload.price,
-          itemsCount: state.basket.itemsCount + 1
-        }
+        items: [...state.items, action.payload],
+        totalPrice: state.totalPrice + action.payload.price,
+        itemsCount: state.itemsCount + 1
       }
 
     case REMOVE_FROM_CART:
       return {
         ...state,
-        basket: { items: state.basket.items.filter(item => item.id !== action.payload.id),
-        totalPrice: state.basket.totalPrice - action.payload.price * action.payload.quantity,
-        itemsCount: state.basket.itemsCount - action.payload.quantity
-        }
+        items: state.items.filter(item => item.id !== action.payload.id),
+        totalPrice: state.totalPrice - action.payload.price * action.payload.quantity,
+        itemsCount: state.itemsCount - action.payload.quantity
+
       }
 
     case INCREMENT_QUANTITY:
       return {
         ...state,
-        basket: {
-          items: state.basket.items.map(item => {
+        items: state.items.map(item => {
           if (item.id === action.payload.id) {
             return {
               ...item,
@@ -47,16 +38,14 @@ function reducer(state = initialState, action) {
           }
           return item
         }),
-        totalPrice: state.basket.totalPrice + action.payload.price,
-        itemsCount: state.basket.itemsCount + 1
+        totalPrice: state.totalPrice + action.payload.price,
+        itemsCount: state.itemsCount + 1
       }
-    }
 
     case DECREMENT_QUANTITY:
       return {
         ...state,
-        basket: {
-        items: state.basket.items.map(item => {
+        items: state.items.map(item => {
           if (item.id === action.payload.id) {
             return {
               ...item,
@@ -65,24 +54,27 @@ function reducer(state = initialState, action) {
           }
           return item
         }),
-        totalPrice: state.basket.totalPrice - action.payload.price,
-        itemsCount: state.basket.itemsCount - 1 
+        totalPrice: state.totalPrice - action.payload.price,
+        itemsCount: state.itemsCount - 1
+
       }
-    }
+
+    case TOGGLE_BASKET:
+      return {
+        ...state,
+        show: !state.show
+      }
 
     case CLEAN_CART:
       return {
         ...state,
-        basket: {
-          status: 'empty',
-          items: [],
-          totalPrice: 0,
-          itemsCount: 0
-        }
+        items: [],
+        totalPrice: 0,
+        itemsCount: 0
       }
     default:
       return state
   }
 }
 
-export default reducer;
+export default basketReducer;
