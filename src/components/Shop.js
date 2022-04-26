@@ -34,7 +34,9 @@ const Shop = ({ products, productsOnCart }) => {
             <p className="item__info__price">Price: <span>{item.price}$</span></p>
             <p className="item__info__quantity">Quantity: <span>{item.quantity}</span></p>
           </div>
-          <Button onClick={() => handleAddToCart(item)}>BUY</Button>
+          <Button onClick={() => handleAddToCart(item)}
+          disabled={item.quantity === 0 ? true : false}
+          >BUY</Button>
         </Card>
       ))}
     </div>
