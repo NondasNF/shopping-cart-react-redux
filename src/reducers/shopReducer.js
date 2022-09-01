@@ -1,5 +1,5 @@
 import { INCREMENT_QUANTITY_IN_SHOP, DECREMENT_QUANTITY_IN_SHOP, RESTORE_QUANTITY_IN_SHOP } from "../actions/shopActions";
-import data from '../data';
+import data from '../mock-data';
 
 const initialState = {
   items: data.products
